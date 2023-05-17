@@ -1,8 +1,8 @@
 #じゃんけん
-puts "じゃんけん....."
-puts "0(グー)1(チョキ)2(パー)"
-
 def janken
+ 
+ puts "じゃんけん....."
+ puts "0(グー)1(チョキ)2(パー)"
  
  janken = ["グー", "チョキ", "パー"]
 
@@ -40,17 +40,15 @@ def look_this_way
 
 if (player_look == program_look && @win = "win")
  puts "あなたの勝ちです！！"
- return false
 elsif  (player_look == program_look && @lose = "lose")
  puts "あなたの負けです。。"
- return false
-else 
- return true
+else
+ janken
 end
+
 end
 
 next_game = true
-
 while next_game
  next_game = janken
 end
