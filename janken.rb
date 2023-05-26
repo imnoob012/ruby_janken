@@ -1,6 +1,3 @@
-class Game
-  puts "じゃんけん..."
-  
   def janken
     puts "0(グー)1(チョキ)2(パー)"
 
@@ -17,11 +14,11 @@ class Game
     elsif (player_hand == 0 && program_hand == 1) || (player_hand == 1 && program_hand == 2) || (player_hand == 2 && program_hand == 0)
       puts "あなたの勝ちです"
       $more_game = "win"
-      return false
+      return look_this_way
     else 
       puts "あなたの負けです"
       $more_game = "lose"
-      return false
+      return look_this_way
     end
   end
     
@@ -50,19 +47,12 @@ class Game
    else
       puts "勝敗が決まりません"
       return true
-    end
    end
   end
   
-  game = Game.new
   next_game = true
   while next_game
-    result = game.janken
-    if result
-      result = game.janken
-    else
-      next_game = game.look_this_way
-    end
+   next_game = janken
   end
 
 
